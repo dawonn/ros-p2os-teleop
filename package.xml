@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <name>p2os_teleop</name>
+  <version>0.1.0</version>
+  <description>The p2os_teleop package allows for manual control of a
+               robot using through the p2os_driver. </description>
+  <maintainer email="dereck@gmail.com">Dereck Wonnacott</maintainer>
+  <license>GPLv2</license>
+  <url type="website">http://ros.org/wiki/p2os</url>
+
+  <author email="dereck@gmail.com">Dereck Wonnacott</author>
+  <author email="dfseifer@usc.edu">David Feil-Seifer</author>
+  <author email="kaszubsk@usc.edu">Edward T. Kaszubski</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  
+</package>
