@@ -96,25 +96,27 @@ class TeleopBase
   void init()
   {
     double joy_msg_timeout;
+    
+    ros::NodeHandle private_nh("~");
        
     cmd.linear.x = cmd.linear.y = cmd.angular.z = 0;
-    n_.param("max_vx", max_vx, max_vx);
-    n_.param("max_vy", max_vy, max_vy);
-    n_.param("max_vw", max_vw, max_vw);
+    private_nh.param("max_vx", max_vx, max_vx);
+    private_nh.param("max_vy", max_vy, max_vy);
+    private_nh.param("max_vw", max_vw, max_vw);
 
     // Set max speed while running
-    n_.param("max_vx_run", max_vx_run, max_vx_run);
-    n_.param("max_vy_run", max_vy_run, max_vy_run);
-    n_.param("max_vw_run", max_vw_run, max_vw_run);
+    private_nh.param("max_vx_run", max_vx_run, max_vx_run);
+    private_nh.param("max_vy_run", max_vy_run, max_vy_run);
+    private_nh.param("max_vw_run", max_vw_run, max_vw_run);
 
-    n_.param("axis_vx", axis_vx, 3);
-    n_.param("axis_vw", axis_vw, 0);
-    n_.param("axis_vy", axis_vy, 2);
+    private_nh.param("axis_vx", axis_vx, 3);
+    private_nh.param("axis_vw", axis_vw, 0);
+    private_nh.param("axis_vy", axis_vy, 2);
 
-    n_.param("deadman_button", deadman_button, 0);
-    n_.param("run_button", run_button, 0);
-
-    n_.param("joy_msg_timeout", joy_msg_timeout, -1.0); //default to no timeout
+    private_nh.param("deadman_button", deadman_button, 0);
+    private_nh.param("run_button", run_button, 0);
+    
+    private_nh.param("joy_msg_timeout", joy_msg_timeout, -1.0); //default to no timeout
     if (joy_msg_timeout <= 0)
     {
       joy_msg_timeout_ = ros::Duration().fromSec(9999999);//DURATION_MAX;

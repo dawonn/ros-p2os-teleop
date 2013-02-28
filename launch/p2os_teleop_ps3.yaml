@@ -1,15 +1,27 @@
 #
 # P2OS Teleop Node
 #
-
  
 #	 PS3 Controller Configuration 
 #	  * Hold the left shoulder button for manual robot control-
 axis_vx:          1
 axis_vw:          2
 axis_vy:          0
+
 deadman_button:   10
 run_button:       11
 
 
+#
+# Default Settings
+#
+joy_msg_timeout: 1
+
+max_vx: 0.6
+max_vy: 0.6
+max_vx: 0.8
+
+max_vx_run: 1.2
+max_vy_run: 1.2
+max_vx_run: 1.2
 
